@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>แบบฟอร์มสั่งซื้อของที่ระลึก</title>
+  <style>
+    body { background-color: #eaf0f6; font-family: sans-serif; padding: 20px; }
+    h1 { color: #003366; }
+    form { background: #fff; padding: 15px; border-radius: 8px; }
+    label { display: block; margin-top: 10px; }
+    input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; }
+    .note { font-size: 0.9em; color: #666; }
+  </style>
+</head>
+<body>
+  <h1>ฟอร์มสั่งซื้อของที่ระลึกครบรอบ 30 ปี</h1>
+
+  <form action="submit_order.php" method="POST" enctype="multipart/form-data">
+    <label>ชื่อ-นามสกุล:</label>
+    <input type="text" name="fullname" required>
+
+    <label>ที่อยู่:</label>
+    <textarea name="address" required></textarea>
+
+    <label>เบอร์โทร:</label>
+    <input type="tel" name="phone" required>
+
+    <label>เลือกรายการสินค้า:</label>
+    <textarea name="order_details" placeholder="ระบุประเภท จำนวน สี/ขนาด ฯลฯ" required></textarea>
+
+    <label>แนบรูปสลิปโอนเงิน:</label>
+    <input type="file" name="slip_image" required>
+
+    <label>วันที่ซื้อ:</label>
+    <input type="date" name="purchase_date" required>
+
+    <label>วิธีรับสินค้า:</label>
+    <select name="delivery">
+      <option>จัดส่ง</option>
+      <option>รับเองที่งาน</option>
+    </select>
+
+    <label>ช่องทางชำระเงิน:</label>
+    <select name="payment_method">
+      <option>โอนบัญชี</option>
+      <option>เก็บเงินปลายทาง</option>
+      <option>ชำระผ่าน QR Code</option>
+    </select>
+
+    <input type="submit" value="ส่งคำสั่งซื้อ">
+  </form>
+</body>
+</html>
